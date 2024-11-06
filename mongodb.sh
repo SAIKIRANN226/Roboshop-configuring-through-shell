@@ -33,11 +33,11 @@ dnf install mongodb-org -y
 
 VALIDATE $? "Installing mongodb"
 
-systemctl enable mongod -y
+systemctl enable mongod
 
 VALIDATE $? "Enabling mongodb"
 
-systemctl start mongod -y
+systemctl start mongod
 
 VALIDATE $? "Starting mongodb"
 
