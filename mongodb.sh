@@ -25,7 +25,7 @@ else
     echo -e "$Y Script started executing at ${DATE} $N"
 fi
 
-yum install mongodb-org -y 
+dnf install mongodb-org -y 
 
 VALIDATE $? "Installing mongodb"
 
