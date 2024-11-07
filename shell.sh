@@ -8,8 +8,6 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-TIMESTAMP=$(date +%F-%H-%M-%S)
-LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
 echo "script stareted executing at $TIMESTAMP" &>> $LOGFILE
 
@@ -37,7 +35,7 @@ do
     yum list installed $package
     if [ $? -ne 0 ]
     then 
-        yum install $package -y $>> $LOGFILE
+        yum install $package -y
     else
         echo -e "$package is already installed so $Y.....SKIPPING $N"
     fi
