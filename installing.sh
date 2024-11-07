@@ -31,14 +31,14 @@ else
 fi 
 
 
-yum install mysql -y $>> $LOGFILE
+yum install mysql -y 
 
 VALIDATE $? "Installing mysql"
 
-yum install git -y $>> $LOGFILE
+yum install git -y 
 
 VALIDATE $? "Installing git"
 
-yum install postfix -y $>> $LOGFILE
+yum install postfix -y 
 
 VALIDATE $? "Installing postfix"
