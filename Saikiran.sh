@@ -8,7 +8,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-LOGFILE="/tmp/$0/saikiran.log"
+LOGFILE="/saikiranlog/$0/saikiran.log"
 
 VALIDATE() {
     if [ $1 -ne 0 ]
