@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ID=$(id -u)
-DATE=$(date %A)
+DATE=$(date +%A)
 
 R="\e[31m"
 G="\e[32m"
