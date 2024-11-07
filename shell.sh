@@ -1,20 +1,32 @@
 #!/bin/bash
 
-NUMBER=$1
+ID=$(id -u)
+DATE=$(date)
+
 R="\e[31m"
 G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
-if [ $NUMBER -lt 100 ]
-then 
-    echo -e "$R Given $NUMBER is less than 100"
-else
-    echo -e "$G Given number is not less than 100"
-fi 
+LOGFILE="/tmp/saikiran.log"
 
+VALIDATE() {
+    if [ $1 -ne 0 ]
+    then 
+        echo -e "$Y $2.....$R FAILED $N"
+        exit 1
+    else
+        echo -e "$Y $2.....$G SUCCESS $N"
+    fi
+}
 
-if [ $NUMBER -gt 100 ]
-then 
-    echo -e "$R Given number is greater than 100 $N"
-else    
-    echo -e "$Y Given number is not greater than 100 $N"
-fi
+for package in $@
+do 
+    yum list installed $package
+    if [ $? -ne 0 ]
+    then 
+        yum install $package
+    else
+        echo -e "$package is already installed so $Y.....SKIPPING $N"
+    fi
+done
