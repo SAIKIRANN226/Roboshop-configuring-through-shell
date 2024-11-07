@@ -8,7 +8,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-LOGFILE="/saikiranlog/$0/saikiran.log"
+# LOGFILE="/saikiranlog/$0/saikiran.log"
 
 VALIDATE() {
     if [ $1 -ne 0 ]
@@ -34,7 +34,7 @@ do
     yum list installed $package
     if [ $? -ne 0 ]
     then 
-        yum install $package -y $>> $LOGFILE
+        yum install $package -y
         VALIDATE $1 "$package Installation"
     else
         echo -e "$package already installed so $Y ....SKIPPING $N"
