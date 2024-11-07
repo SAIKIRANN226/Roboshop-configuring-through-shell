@@ -8,7 +8,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-LOGFILE="/home/centos/package_install.log"
+LOGFILE="/home/centos/package_install.log/saikiran/package.log"
 
 VALIDATE(){
     if [ $1 -ne 0 ]
