@@ -10,7 +10,7 @@ N="\e[0m"
 
 LOGFILE="/tmp/$DATE.log"
 
-VALIDATE() {
+VALIDATE(){
     if [ $1 -ne 0 ]
     then 
         echo -e "$2.......$R FAILED $N"
