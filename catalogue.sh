@@ -36,21 +36,21 @@ dnf install nodejs -y
 
 VALIDATE $? "Installing nodejs"
 
-id roboshop
-if [ $? -ne 0 ]
-then 
-    useradd roboshop
-    VALIDATE $? "adding roboshop user"
-else
-    echo -e "already roboshop user exists so.....$Y SKIPPING"
+useradd roboshop
+
+VALIDATE $? "Adding roboshop user"
 
 mkdir -p /app
 
 VALIDATE $? "Creating app folder"
 
+cd /app
+
+VALIDATE $? "Moving to the app folder"
+
 curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip
 
-VALIDATE $? "Downloading the code"
+VALIDATE $? "Downloading the code in to the app folder"
 
 unzip /tmp/catalogue.zip
 
