@@ -36,7 +36,7 @@ dnf install nodejs -y
 
 VALIDATE $? "Installing nodejs"
 
-useradd roboshop
+sudo useradd roboshop
 
 VALIDATE $? "Adding roboshop user"
 
