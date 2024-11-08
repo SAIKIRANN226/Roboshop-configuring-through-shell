@@ -18,6 +18,16 @@ VALIDATE() {
     fi
 }
 
+if [ $ID -ne 0 ]
+then    
+    echo -e "$R ERROR:: Please run the script with root user $N"
+    exit 1
+else
+    echo -e "$Y Script started executing at ${DATE} $N"
+fi
+
+
+
 for package in $@
 do
     yum list installed $package
