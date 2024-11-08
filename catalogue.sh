@@ -44,7 +44,7 @@ mkdir  /app
 
 VALIDATE $? "Creating app folder"
 
-curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip -y
+curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip
 
 VALIDATE $? "Downloading the code"
 
