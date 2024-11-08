@@ -36,9 +36,13 @@ dnf install nodejs -y
 
 VALIDATE $? "Installing nodejs"
 
-useradd roboshop
-
-VALIDATE $? "Adding roboshop user"
+id roboshop
+if [ $? -ne 0 ]
+then 
+    useradd roboshop
+    VALIDATE $? "adding roboshop user"
+else
+    echo -e "already roboshop user exists so.....$Y SKIPPING"
 
 mkdir  /app
 
