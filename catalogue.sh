@@ -56,4 +56,32 @@ unzip /tmp/catalogue.zip
 
 VALIDATE $? "Unzipping the code"
 
+cd /app
+
+VALIDATE $? "Moving to the app folder"
+
+npm install -y
+
+VALIDATE $? "Installing npm"
+
+cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service
+
+VALIDATE $? "Copied"
+
+systemctl daemon-reload
+
+VALIDATE $? "Loading the service"
+
+systemctl enable catalogue
+
+VALIDATE $? "Enabling catalogue"
+
+systemctl start catalogue
+
+VALIDATE $? "Starting the catalogue'
+
+
+
+
+
 
