@@ -21,7 +21,7 @@ then
     echo -e "$R ERROR:: Please run the script with root user $N"
     exit 1
 else
-    echo -e "$Y Script started executing at ${DATE} $N"
+    echo -e "Root user"
 fi
 
 cp mongo.repo /etc/yum.repos.d/mongo.repo 
