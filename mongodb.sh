@@ -25,7 +25,7 @@ else
     echo -e "$Y Script started executing at ${DATE} $N"
 fi
 
-echo -e "$Y Script started executing at ${$DATE} $N"
+echo -e "$Y Script started executing at ${DATE} $N"
 
 
 dnf install mongodb-org -y 
