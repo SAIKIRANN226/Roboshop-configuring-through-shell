@@ -25,8 +25,9 @@ else
     echo -e "$Y Script started executing at ${DATE} $N"
 fi
 
-echo -e "$Y Script started executing at ${DATE} $N"
+cp mongo.repo /etc/yum.repos.d/mongo.repo 
 
+VALIDATE $? "Copied mongodb repo"
 
 dnf install mongodb-org -y 
 
