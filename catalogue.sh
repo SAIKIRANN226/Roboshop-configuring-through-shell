@@ -44,7 +44,7 @@ then
 else
     echo -e "already roboshop user exists so.....$Y SKIPPING"
 
-mkdir  /app
+mkdir -p /app
 
 VALIDATE $? "Creating app folder"
 
