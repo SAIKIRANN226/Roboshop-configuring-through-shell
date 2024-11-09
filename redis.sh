@@ -29,7 +29,7 @@ else
     echo -e "$Y Script started executing at ${DATE} $N"
 fi 
 
-dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y $>> $LOGFILE
+dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
 
 VALIDATE $? "Installing repo file"
 
