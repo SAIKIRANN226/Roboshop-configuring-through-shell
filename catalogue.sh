@@ -94,11 +94,11 @@ dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? "Installing mongodb-org shell"
 
-mongo --host 172.31.42.202 </app/schema/catalogue.js
+mongo --host 172.31.42.202 </app/schema/catalogue.js &>> $LOGFILE
 
 VALIDATE $? "Load schema"
 
-systemctl restart catalogue
+systemctl restart catalogue &>> $LOGFILE
 
 VALIDATE $? "Restarting the catalogue"
 
