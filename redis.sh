@@ -37,11 +37,11 @@ dnf module enable redis:remi-6.2 -y
 
 VALIDATE $? "Enabling remi 6.2"
 
-dnf install redis -y $>> $LOGFILE
+dnf install redis -y
 
 VALIDATE $? "Installing redis"
 
-sed -i 's/127.0.0.1/0.0.0.0/g' /etc/redis/redis.conf $>> $LOGFILE
+sed -i 's/127.0.0.1/0.0.0.0/g' /etc/redis/redis.conf
 
 VALIDATE $? "Giving remote access"
 
