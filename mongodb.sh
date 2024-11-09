@@ -26,6 +26,10 @@ else
     echo -e "$Y Script started executing at ${DATE} $N"
 fi 
 
+cp /home/centos/Roboshop-configuring-through-shell/mongo.repo /etc/yum.repos.d/mongo.repo
+
+VALIDATE $? "Copied mongo.repo file"
+
 dnf install mongodb-org -y 
 
 VALIDATE $? "Installing mongodb"
