@@ -33,7 +33,7 @@ dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
 
 VALIDATE $? "Installing repo file"
 
-dnf module enable redis:remi-6.2 -y $>> $LOGFILE
+dnf module enable redis:remi-6.2 -y
 
 VALIDATE $? "Enabling remi 6.2"
 
