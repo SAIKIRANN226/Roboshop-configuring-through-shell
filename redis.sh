@@ -45,10 +45,10 @@ sed -i 's/127.0.0.1/0.0.0.0/g' /etc/redis/redis.conf
 
 VALIDATE $? "Giving remote access"
 
-systemctl enable redis $>> $LOGFILE
+systemctl enable redis
 
 VALIDATE $? "Enabling redis"
 
-systemctl start redis $>> $LOGFILE
+systemctl start redis
 
 VALIDATE $? "Starting redis"
