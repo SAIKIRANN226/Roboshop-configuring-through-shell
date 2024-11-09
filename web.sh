@@ -58,9 +58,13 @@ cp /home/centos/Roboshop-configuring-through-shell/roboshop.conf /etc/nginx/defa
 
 VALIDATE $? "Copied roboshop.conf file"
 
-systemctl restart nginx 
+systemctl enable nginx
 
-VALIDATE $? "Restarting the nginx"
+VALIDATE $? "Enabling nginx"
+
+systemctl start nginx
+
+VALIDATE $? "Starting nginx"
 
 
 
