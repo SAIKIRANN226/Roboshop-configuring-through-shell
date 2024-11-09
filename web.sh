@@ -50,7 +50,7 @@ cd /usr/share/nginx/html
 
 VALIDATE $? "Extracting the downloaded content"
 
-unzip /tmp/web.zip
+unzip -o /tmp/web.zip
 
 VALIDATE $? "Unzipping the code"
 
@@ -58,13 +58,8 @@ cp /home/centos/Roboshop-configuring-through-shell/roboshop.conf /etc/nginx/defa
 
 VALIDATE $? "Copied roboshop.conf file"
 
-systemctl enable nginx
+systemctl restart nginx
 
-VALIDATE $? "Enabling nginx"
-
-systemctl start nginx
-
-VALIDATE $? "Starting nginx"
-
+VALIDATE $? 'reatsrted nginx"
 
 
