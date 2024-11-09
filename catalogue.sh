@@ -50,7 +50,7 @@ mkdir /app
 
 VALIDATE $? "Creating app folder to dowload the code"
 
-cd /app
+cd -p /app
 
 VALIDATE $? "Moving into the app folder"
 
