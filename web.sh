@@ -38,7 +38,7 @@ systemctl start nginx
 
 VALIDATE $? "Starting nginx"
 
-http:saidevops.fun
+http://3.82.157.247:80
 
 VALIDATE $? "Opening URL to check the default content"
 
