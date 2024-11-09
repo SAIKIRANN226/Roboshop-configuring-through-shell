@@ -60,6 +60,6 @@ VALIDATE $? "Copied roboshop.conf file"
 
 systemctl restart nginx
 
-VALIDATE $? 'reatsrted nginx"
+VALIDATE $? 'restarted nginx"
 
 
