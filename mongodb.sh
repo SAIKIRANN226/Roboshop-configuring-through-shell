@@ -1,12 +1,12 @@
 #!/bin/bash
 
 ID=$(id -u)
+DATE=$(date)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-DATE=$(date)
 
 if [ $1 -ne 0 ]
 then 
