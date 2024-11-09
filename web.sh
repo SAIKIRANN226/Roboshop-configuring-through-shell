@@ -39,26 +39,28 @@ systemctl start nginx
 
 VALIDATE $? "Starting nginx"
 
-rm -rf /usr/share/nginx/html/*
 
-VALIDATE $? "Removed default content"
 
-curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip
+# rm -rf /usr/share/nginx/html/*
 
-VALIDATE $? "Downloaded the content"
+# VALIDATE $? "Removed default content"
 
-cd /usr/share/nginx/html
+# curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip
 
-VALIDATE $? "Extract the front end content"
+# VALIDATE $? "Downloaded the content"
 
-unzip /tmp/web.zip
+# cd /usr/share/nginx/html
 
-VALIDATE $? "Unzipping the code"
+# VALIDATE $? "Extract the front end content"
 
-cp /home/centos/Roboshop-configuring-through-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf
+# unzip /tmp/web.zip
 
-VALIDATE $? "Copied roboshop conf file"
+# VALIDATE $? "Unzipping the code"
 
-systemctl restart nginx 
+# cp /home/centos/Roboshop-configuring-through-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf
 
-VALIDATE $? "Restarting the nginx server"
+# VALIDATE $? "Copied roboshop conf file"
+
+# systemctl restart nginx 
+
+# VALIDATE $? "Restarting the nginx server"
