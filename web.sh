@@ -38,10 +38,6 @@ systemctl start nginx
 
 VALIDATE $? "Starting nginx"
 
-http://3.82.157.247:80
-
-VALIDATE $? "Opening URL to check the default content"
-
 rm -rf /usr/share/nginx/html/*
 
 VALIDATE $? "Removing default content"
