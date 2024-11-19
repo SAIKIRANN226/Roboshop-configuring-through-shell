@@ -26,23 +26,4 @@ cp mongo.repo /etc/yum.repos.d/mongo.repo
 
 VALIDATE $? "copied mongo repo 
 
-dnf install mongodb-org -y
-
-VALIDATE $? "Installing mongodb"
-
-systemctl enable mongod
-
-VALIDATE $? "Enabling mongod"
-
-systemctl start mongod
-
-VALIDATE $? "Starting mongod"
-
-sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
-
-VALIDATE $? "Giving remote access"
-
-systemctl restart mongod
-
-VALIDATE $? "Restarting mongod"
 
