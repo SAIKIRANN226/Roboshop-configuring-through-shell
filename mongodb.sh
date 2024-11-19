@@ -24,6 +24,6 @@ fi
 
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 
-VALIDATE $? "copied mongo repo 
+VALIDATE $? "copied mongo repo
 
 
