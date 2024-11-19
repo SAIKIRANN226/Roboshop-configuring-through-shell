@@ -22,8 +22,11 @@ else
     echo -e "$Y Root user $N"
 fi 
 
+cp mongo.repo /etc/yum.repos.d/mongo.repo
 
-dnf install mongodb-org -y 
+VALIDATE $? "copied mongo repo 
+
+dnf install mongodb-org -y
 
 VALIDATE $? "Installing mongodb"
 
