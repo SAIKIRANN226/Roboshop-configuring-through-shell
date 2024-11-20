@@ -41,9 +41,14 @@ dnf install nodejs -y &>> $LOGFILE
 
 VALIDATE $? "Installing nodejs" 
 
-useradd roboshop &>> $LOGFILE
-
-VALIDATE $? "Adding user" 
+id roboshop # If roboshop user does not exist, then it is failure so automatically exit "set -e" will not work here
+if [ $? -ne 0 ]
+then
+    useradd roboshop
+    VALIDATE $? "roboshop user creation"
+else
+    echo -e "roboshop user already exist $Y SKIPPING $N"
+fi
 
 mkdir /app &>> $LOGFILE
 
