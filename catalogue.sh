@@ -69,7 +69,7 @@ systemctl daemon-reload &>> $LOGFILE
 
 VALIDATE $? "Daemon reloaded"
 
-systemctl enable catalogue &>> $LOGFILE
+systemctl enable catalogue
 
 VALIDATE $? "Enabling catalogue"
 
