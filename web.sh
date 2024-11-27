@@ -7,9 +7,9 @@ Y="\e[33m"
 N="\e[0m"
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
-LOGFILE="/tmp/$0-$TIMESTAMP.log"
+# LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
-echo "script stareted executing at $TIMESTAMP" &>> $LOGFILE
+echo "script stareted executing at $TIMESTAMP" 
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -29,7 +29,7 @@ else
     echo "You are root user"
 fi 
 
-dnf install nginx -y &>> $LOGFILE
+dnf install nginx -y 
 
 VALIDATE $? "Installing nginx"
 
@@ -41,19 +41,19 @@ systemctl start nginx
 
 VALIDATE $? "Starting nginx"
 
-rm -rf /usr/share/nginx/html/* &>> $LOGFILE
+rm -rf /usr/share/nginx/html/* 
 
 VALIDATE $? "Removed default content"
 
-curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip &>> $LOGFILE
+curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip 
 
 VALIDATE $? "Downloaded the content"
 
-cd /usr/share/nginx/html &>> $LOGFILE
+cd /usr/share/nginx/html 
 
 VALIDATE $? "Extracted the content"
 
-unzip /tmp/web.zip &>> $LOGFILE
+unzip /tmp/web.zip 
 
 VALIDATE $? "Unzipped the content"
 
