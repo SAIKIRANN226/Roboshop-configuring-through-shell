@@ -74,6 +74,10 @@ systemctl daemon-reload &>> $LOGFILE
 
 VALIDATE $? "Daemon reloaded"
 
+sudo find /etc/systemd/system /lib/systemd/system -name "catalogue.service"
+
+VALIDATE $? "Finding the catalogue.service file"
+
 systemctl enable catalogue
 
 VALIDATE $? "Enabling catalogue"
