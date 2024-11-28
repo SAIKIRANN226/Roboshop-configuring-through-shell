@@ -90,7 +90,7 @@ dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? "Installing mongo.repo file"
 
-mongo --host 172.31.38.249 </app/schema/catalogue.js &>> $LOGFILE
+mongo --host 54.90.225.217 </app/schema/catalogue.js &>> $LOGFILE
 
 VALIDATE $? "loaded schema"
 
