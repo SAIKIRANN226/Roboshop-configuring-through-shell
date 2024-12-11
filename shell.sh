@@ -12,7 +12,7 @@ else
 fi
 
 
-yum install mysql 
+yum install mysql -y
 
 if [ $? -ne 0 ]
 then 
