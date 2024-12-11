@@ -33,7 +33,7 @@ else
     echo -e "$G Installing mysql success $N"
 fi 
 
-yum install postfix -y
+yum install postfix -y u
 
 VALIDATE $? "Installing postfix"
 
