@@ -59,7 +59,7 @@ curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip &>> L
 
 VALIDATE $? "Downloading the application code"
 
-unzip /tmp/user.zip &>> LOGFILE
+unzip -o /tmp/user.zip &>> LOGFILE
 
 VALIDATE $? "Unzipping the code"
 
