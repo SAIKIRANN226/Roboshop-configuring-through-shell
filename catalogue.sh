@@ -59,7 +59,7 @@ curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zi
 
 VALIDATE $? "Downloading the code in the app directory"
 
-unzip /tmp/catalogue.zip &>> LOGFILE
+unzip -o /tmp/catalogue.zip &>> LOGFILE
 
 VALIDATE $? "Unzipping the catalogue code"
 
