@@ -47,7 +47,7 @@ else
     echo -e "User already exists so....$Y SKIPPING $N"
 fi
 
-mkdir /app &>> LOGFILE
+mkdir -p /app &>> LOGFILE
 
 VALIDATE $? "Creating app folder"
 
