@@ -6,14 +6,6 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-if [ $1 -ne 0 ]
-then 
-    echo -e "$2.....$R FAILED $N"
-    exit 1
-else
-    echo -e "$2.....$G SUCCESS $N"
-fi 
-
 DATE=$(date)
 LOGFILE="/tmp/$0/$DATE.log"
 
@@ -23,6 +15,14 @@ then
     exit 1
 else
     echo -e "$Y Script started executing at $DATE $N "
+fi 
+
+if [ $1 -ne 0 ]
+then 
+    echo -e "$2.....$R FAILED $N"
+    exit 1
+else
+    echo -e "$2.....$G SUCCESS $N"
 fi 
 
 cp mongo.repo /etc/yum.repos.d/mongo.repo &>> LOGFILE
