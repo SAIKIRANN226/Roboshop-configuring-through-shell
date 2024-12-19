@@ -91,7 +91,7 @@ dnf install mongodb-org-shell -y &>> LOGFILE
 
 VALIDATE $? "Installing mongodb-org-shell"
 
-mongo --host 172.31.89.135:27017 </app/schema/catalogue.js &>> LOGFILE
+mongo --host 172.31.89.135 </app/schema/catalogue.js &>> LOGFILE
 
 VALIDATE $? "Loading schema to the catalogue"
 
