@@ -6,9 +6,6 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-DATE=$(date)
-LOGFILE="/tmp/$0/$DATE.log"
-
 if [ $1 -ne 0 ]
 then 
     echo -e "$2.....$R FAILED $N"
@@ -16,6 +13,9 @@ then
 else
     echo -e "$2.....$G SUCCESS $N"
 fi 
+
+DATE=$(date)
+LOGFILE="/tmp/$0/$DATE.log"
 
 if [ $ID -ne 0 ]
 then 
