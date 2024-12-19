@@ -18,7 +18,7 @@ else
 fi 
 
 VALIDATE() {
-    
+
     if [ $1 -ne 0 ]
     then 
         echo -e "$2.....$R FAILED $N"
@@ -44,7 +44,7 @@ systemctl start mongod &>> LOGFILE
 
 VALIDATE $? "Starting mongod"
 
-sed -i '127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>> LOGFILE
+sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>> LOGFILE
 
 VALIDATE $? "Enabling remote connections"
 
