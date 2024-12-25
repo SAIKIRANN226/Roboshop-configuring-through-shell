@@ -7,7 +7,6 @@ Y="\e[33m"
 N="\e[0m"
 
 DATE=$(date)
-LOGFILE="$0/tmp/$DATE.log"
 
 if [ $ID -ne 0 ]
 then 
@@ -27,26 +26,26 @@ VALIDATE() {
     fi 
 }
 
-cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+cp mongo.repo /etc/yum.repos.d/mongo.repo &>> tmp/saikiran.log
 
 VALIDATE $? "Copied mongo.repo"
 
-dnf install mongodb-org -y &>> $LOGFILE
+dnf install mongodb-org -y &>> tmp/saikiran.log
 
 VALIDATE $? "Installing mongodb-org"
 
-systemctl enable mongod &>> $LOGFILE
+systemctl enable mongod &>> tmp/saikiran.log
 
 VALIDATE $? "Enabling mongod"
 
-systemctl start mongod &>> $LOGFILE
+systemctl start mongod &>> tmp/saikiran.log
 
 VALIDATE $? "Starting mongod"
 
-sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>> $LOGFILE
+sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>> tmp/saikiran.log
 
 VALIDATE $? "Giving remote access"
 
-systemctl restart mongod &>> $LOGFILE
+systemctl restart mongod &>> tmp/saikiran.log
 
 VALIDATE $? "Restarting mongod"
