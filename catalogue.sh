@@ -43,6 +43,7 @@ useradd roboshop
 if [ $? -ne 0 ]
 then 
     useradd roboshop 
+    VALIDATE $? "User creation"
 else
     echo -e "user roboshop already exists so .... $Y SKIPPING $N"
 fi 
@@ -59,7 +60,7 @@ curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zi
 
 VALIDATE $? "Downloading catalogue code"
 
-unzip /tmp/catalogue.zip &>> LOGFILE
+unzip -o /tmp/catalogue.zip &>> LOGFILE
 
 VALIDATE $? "Unzipping the catalogue code"
 
