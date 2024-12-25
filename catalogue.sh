@@ -51,7 +51,7 @@ mkdir /app &>> LOGFILE
 
 VALIDATE $? "Creating mkdir folder"
 
-cd app &>> LOGFILE
+cd /app &>> LOGFILE
 
 VALIDATE $? "Moving to app folder"
 
