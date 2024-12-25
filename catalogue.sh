@@ -39,10 +39,10 @@ dnf install nodejs -y &>> LOGFILE
 
 VALIDATE "Installing nodeJS"
 
-useradd roboshop
+id roboshop
 if [ $? -ne 0 ]
 then 
-    useradd roboshop 
+    useradd roboshop
     VALIDATE $? "User creation"
 else
     echo -e "user roboshop already exists so .... $Y SKIPPING $N"
